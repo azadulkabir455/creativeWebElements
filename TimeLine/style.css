@@ -1,0 +1,114 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body {
+    background-color: violet;
+}
+.timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* For Time Line Pipe */
+.timeline:after {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container {
+    width: 50%;
+    position: relative;
+    padding: 10px 40px;
+    background-color: inherit;
+}
+.left {
+    left:0;
+}
+.right {
+    left: 50%;
+}
+/* Start For Time Line Circle */
+.container:after {
+    content:"\9829";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 4px solid darkorange;
+    border-radius: 100px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    z-index: 3;
+}
+.left {
+    left:0;
+}
+.left:after {
+    right: -17px;
+}
+
+.right {
+    left: 50%;
+}
+.right:after {
+    left: -17px;
+}
+/* End For Time Line Circle */
+
+/* For Right Arrow and Left Arrow */
+
+.left:before {
+    content: "";
+    border: 8px solid #fff;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    right:25px;
+    top: 20px;
+}
+.right:before {
+    content: "";
+    border: 8px solid #fff;
+    border-color: transparent #fff transparent transparent ;
+    position: absolute;
+    left:25px;
+    top: 20px;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:after {
+        left: 40px; 
+    }
+    .container {
+        width: calc(100% - 40px);
+    }
+    .left,.right {
+        left:40px;
+    }
+    .left:after {
+        right: unset;
+        left: -17px;
+    }
+    .left:before {
+        border-color: transparent #fff transparent transparent;
+        left: 25px;
+        right: unset;
+    }
+}
