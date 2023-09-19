@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flipBox {
+    width: 300px;
+    height: 400px; 
+    perspective: 1000px;
+}
+.flipBox .flipInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all .8s linear;
+    transform-style: preserve-3d;
+}
+
+.flipBox:hover .flipInner {
+    transform:rotateY(180deg);
+}
+
+.flipInner .flipFront, .flipInner .flipBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.flipInner .flipFront {
+    background-color: #ddd;
+}
+.flipInner .flipFront img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.flipInner .flipBack  {
+    background-color: #222;
+    color: #f2f2f2;
+    text-align:justify;
+    padding: 15px 10px;
+    transform: rotateY(180deg);
+}
+.flipInner .flipBack p {
+    padding: 10px 0 20px;
+}
+.flipInner .flipBack button {
+    border:none;
+    outline: none;
+    padding: 12px 24px;
+    background-color: forestgreen;
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+}
