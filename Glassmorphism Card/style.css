@@ -22,12 +22,12 @@ body {
     align-items: center;
 }
 .cardContainer .card {
-    margin: 60px;
+    margin: 20px 50px;
     position: relative;
     flex-basis: calc(50% - 120px);
     padding: 40px 40px 40px 100px;
     border-radius: 10px;
-    background-color: #e2e2e2;
+    background-color: #fff;
     box-shadow: 1px 3px 20px rgba(160, 198, 223, 0.7);
 }
 .cardContainer .card .cardContent h4 {
